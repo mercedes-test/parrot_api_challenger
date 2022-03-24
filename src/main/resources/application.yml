@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    username: root
+    url: >-
+      jdbc:mysql://localhost:3306/parrot?useSLL=false&serverTimezone=UTC&useLegacyDateTimeCode=false
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: 'true '
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8080
+config:
+  security:
+   oauth:
+    client:
+     id: apiparrot
+     secret: $2a$10$Shwmm1eVWMX/MO3vPVXjvufHHFA/7tbijE2leHi0po0iEAFWBRDsa
+    jwt:
+     key: code_signature_jwt_api_parrot
